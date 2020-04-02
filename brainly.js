@@ -1,8 +1,4 @@
 const fetch = require('node-fetch');
-const delay = require('delay');
-const moment = require('moment')
-const cheerio = require('cheerio');
-const { URLSearchParams } = require('url');
 const readline = require("readline-sync");
 const chalk = require('chalk');
 
@@ -29,8 +25,6 @@ const functionSearch = (ask) => new Promise((resolve, reject) => {
        })
        .then(res => res.json())
        .then(result => {
-      //  const $ = cheerio.load(result);
-        // const resText = $('h7').text();
            resolve(result);
        })
        .catch(err => reject(err))
@@ -40,17 +34,13 @@ const functionSearch = (ask) => new Promise((resolve, reject) => {
       try {
         console.log(chalk.yellow('Scrapping Questions From Brainly\nCreated By SYG\n'))
         const ask = readline.question("Question (Ex: indonesia)?: ")
-        for (var i=0; i < 8; i++) {
         const search = await functionSearch(ask);
-        var data = search.data.questionSearch.edges[`${i}`].node.content;
-        const asd = chalk.yellow(`Question ${i}:\n`)
-        console.log("")
-        console.log(chalk.green(`${asd}${data}`))
-        console.log("")
+        const itung = search.data.questionSearch.edges.length
+        for (var i=0; i < itung; i++) {
+        var data = `Pertanyaan ke ${i+1} \n${search.data.questionSearch.edges[i].node.content}\n`//.split('<br />');
+        console.log(data)
         }
-        console.log(chalk.yellow('Thanks for using'))
       } catch (e) {
           console.log(e)
     }
-    
   })()
