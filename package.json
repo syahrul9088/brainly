@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "async": "^3.0.1",
+    "async": "^3.2.2",
     "async-file": "^2.0.2",
     "browser-fingerprint": "^0.1.0",
     "cheerio": "^1.0.0-rc.3",
