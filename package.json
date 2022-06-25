@@ -22,7 +22,7 @@
     "mail-listener2": "^0.3.1",
     "mailparse": "^2.2.2",
     "moment": "^2.24.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "random-useragent": "^0.3.1",
     "random-words": "^1.1.0",
     "randomstring": "^1.1.5",
